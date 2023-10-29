@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 
-export const URL = "http://localhost:8080";
+export const URL = "https://moh-auth-dev.onrender.com";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
