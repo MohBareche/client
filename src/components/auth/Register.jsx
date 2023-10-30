@@ -37,9 +37,14 @@ const Register = () => {
             };
           const data = await axios.post(url, registerData);
           await getLoggedIn()
-          navigate('/')
+        const { success, message } = data.data;
+            if (success) {
+                handleSuccess(message);
+                setTimeout(() => navigate("/"), 3000);
+            } else {
+                handleError(message)
         } catch (error) {
-            console.error(error);
+            handleError(response.data.message);
         }
     };
     return (
