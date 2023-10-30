@@ -43,8 +43,9 @@ function App() {
                         )}
                     </Routes>
                 </div>
+                <ToastContainer />
             </BrowserRouter>
-            <ToastContainer />
+            
         </>
     );
 }
