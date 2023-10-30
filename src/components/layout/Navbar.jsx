@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-dark bg-dark">
             <div className="container-fluid">
-                <img src={logo} width="24" height="24">
+                <img src={logo} width="24" height="24" />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
@@ -31,12 +31,12 @@ const Navbar = () => {
                         <LogOutBtn />
                     </>
                 )}
+                );
               </li>
           </ul>
         </div>
-          </div>
-        </nav>
-    );
+      </div>
+    </nav>
 };
 
 export default Navbar;
