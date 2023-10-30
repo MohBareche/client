@@ -3,26 +3,49 @@ import axios from "axios";
 import { URL } from "../../main";
 import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("");
 
-  const { getLoggedIn } = useContext(AuthContext)
-  const navigate = useNavigate()
+    const { getLoggedIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleError = (err) => {
+        toast.error(err, {
+            position: "top-center",
+        });
+    };
+
+    const handleSuccess = (msg) => {
+        toast.success(msg, {
+            position: "top-center",
+        });
+    };
 
     const handleLogin = async (e) => {
         e.preventDefault();
         const url = `${URL}/auth/login`;
         try {
             const loginData = { email, password };
-          await axios.post(url, loginData);
-          await getLoggedIn()
-          navigate('/')
+            const data = await axios.post(url, loginData, {
+                withCredentials: true,
+            });
+            await getLoggedIn();
+
+            const { success, message } = data;
+            if (success) {
+                handleSuccess(message);
+                setTimeout(() => navigate("/"), 3000);
+            } else {
+                handleError(message)
+            }
         } catch (error) {
             console.error(error);
         }
     };
+
     return (
         <div>
             <form onSubmit={handleLogin}>
