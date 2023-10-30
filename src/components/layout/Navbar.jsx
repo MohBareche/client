@@ -7,8 +7,8 @@ const Navbar = () => {
     const { loggedIn } = useContext(AuthContext);
     return (
         <nav
-            className="navbar navbar-light"
-            style={{ backgroundColor: "#e3f2fd" }}
+            className="navbar navbar-dark bg-dark"
+            
         >
             <Link to="/">Home</Link>
             {loggedIn === false && (
