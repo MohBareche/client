@@ -42,7 +42,7 @@ const Login = () => {
                 handleError(message)
             }
         } catch (error) {
-            handleError(response.data.message)
+            handleError(error.response.data.message)
         }
     };
 
