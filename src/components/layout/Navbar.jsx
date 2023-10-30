@@ -31,12 +31,10 @@ const Navbar = () => {
                         <LogOutBtn />
                     </>
                 )}
-                );
               </li>
           </ul>
         </div>
       </div>
     </nav>
-};
-
+);
 export default Navbar;
