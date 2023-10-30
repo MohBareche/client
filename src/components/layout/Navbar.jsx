@@ -6,23 +6,26 @@ import LogOutBtn from "../auth/LogOutBtn";
 const Navbar = () => {
     const { loggedIn } = useContext(AuthContext);
     return (
-        <nav
-            className="navbar navbar-dark bg-dark"
-            
-        >
-            <Link to="/">Home</Link>
-            {loggedIn === false && (
-                <>
-                    <Link to="/register">Register</Link>
-                    <Link to="/login">Login</Link>
-                </>
-            )}
-            {loggedIn === true && (
-                <>
-                    <Link to="/customer">Customers</Link>
-                    <LogOutBtn />
-                </>
-            )}
+        <nav className="navbar navbar-dark bg-dark">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                     <Link  className="nav-link" to="/">Home</Link>
+                </li>
+                <li className="nav-item">
+                 {loggedIn === false && (
+                    <>
+                        <Link className="nav-link" to="/register">Register</Link>
+                        <Link className="nav-link" to="/login">Login</Link>
+                    </>
+                )}
+                {loggedIn === true && (
+                    <>
+                        <Link className="nav-link" to="/customer">Customers</Link>
+                        <LogOutBtn />
+                    </>
+                )}
+              </li>
+          </ul>
         </nav>
     );
 };
