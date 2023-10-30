@@ -16,9 +16,7 @@ axios.defaults.withCredentials = true;
 function App() {
     const { loggedIn } = useContext(AuthContext);
     return (
-        <>
             <BrowserRouter>
-                <div className="container">
                     <Navbar />
                     <Routes>
                         <Route exact path="/" element={<Home />}>
@@ -42,11 +40,8 @@ function App() {
                             </>
                         )}
                     </Routes>
-                </div>
                 <ToastContainer />
             </BrowserRouter>
-            
-        </>
     );
 }
 
