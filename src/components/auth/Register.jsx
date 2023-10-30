@@ -36,6 +36,7 @@ const Register = () => {
                 passwordVerify,
             };
           const data = await axios.post(url, registerData);
+            console.log(data)
           await getLoggedIn()
         const { success, message } = data.data;
             if (success) {
@@ -44,6 +45,7 @@ const Register = () => {
             } else {
                 handleError(message)
         } catch (error) {
+            console.log(error)
             handleError(response.data.message);
         }
     };
