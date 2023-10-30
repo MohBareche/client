@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { URL } from "../../main";
 import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const [username, setUsername] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
                 password,
                 passwordVerify,
             };
-          await axios.post(url, registerData);
+          const data = await axios.post(url, registerData);
           await getLoggedIn()
           navigate('/')
         } catch (error) {
