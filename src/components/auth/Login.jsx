@@ -42,8 +42,7 @@ const Login = () => {
                 handleError(message)
             }
         } catch (error) {
-            console.log(error)
-            handleError(error.response.data.message)
+            handleError(error)
         }
     };
 
