@@ -5,6 +5,7 @@ import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
+import "bootstrap/dist/js/bootstrap.js"
 
 export const URL = "https://moh-auth-dev.onrender.com";
 
