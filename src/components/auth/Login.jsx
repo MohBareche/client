@@ -34,7 +34,7 @@ const Login = () => {
             });
             await getLoggedIn();
 
-            const { success, message } = data;
+            const { success, message } = data.data;
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => navigate("/"), 3000);
@@ -42,7 +42,7 @@ const Login = () => {
                 handleError(message)
             }
         } catch (error) {
-            console.error(error);
+            handleError(response.data.message)
         }
     };
 
