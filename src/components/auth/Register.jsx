@@ -45,7 +45,7 @@ const Register = () => {
             } else {
                 handleError(message)
         } catch (error) {
-            handleError(error.response.data.message);
+            handleError(error);
         }
     };
     return (
