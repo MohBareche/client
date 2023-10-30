@@ -11,8 +11,20 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [passwordVerify, setPasswordVerify] = useState("");
 
-  const { getLoggedIn} = useContext(AuthContext)
-  const navigate = useNavigate()
+    const handleError = (err) => {
+        toast.error(err, {
+            position: "top-center",
+        });
+    };
+
+    const handleSuccess = (msg) => {
+        toast.success(msg, {
+            position: "top-center",
+        });
+    };
+    
+    const { getLoggedIn} = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleRegister = async (e) => {
         e.preventDefault();
         const url = `${URL}/auth/register`;
