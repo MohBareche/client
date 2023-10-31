@@ -40,7 +40,13 @@ function App() {
                             </>
                         )}
                     </Routes>
-                <ToastContainer />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                />
             </BrowserRouter>
     );
 }
