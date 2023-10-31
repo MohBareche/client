@@ -13,15 +13,11 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleError = (err) => {
-        toast.error(err, {
-            position: "top-center",
-        });
+        toast.error(err);
     };
 
     const handleSuccess = (msg) => {
-        toast.success(msg, {
-            position: "top-center",
-        });
+        toast.success(msg);
     };
 
     const handleLogin = async (e) => {
