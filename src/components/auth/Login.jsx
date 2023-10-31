@@ -34,8 +34,6 @@ const Login = () => {
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => navigate("/"), 3000);
-            } else {
-                handleError(message)
             }
         } catch (error) {
             handleError(error)
