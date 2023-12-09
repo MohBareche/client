@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import "bootstrap/dist/js/bootstrap.js"
 
-export const URL = "https://server-eight-rust.vercel.app";
+export const URL = "https://server-seven-ashy.vercel.app";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
