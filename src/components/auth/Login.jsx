@@ -33,7 +33,7 @@ const Login = () => {
             const { success, message } = data.data;
             if (success) {
                 handleSuccess(message);
-                setTimeout(() => navigate("/"), 3000);
+                setTimeout(() => navigate("/customer"), 3000);
             }
         } catch (error) {
             handleError(error)
